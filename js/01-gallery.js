@@ -27,6 +27,12 @@ const showModal = imageSrc => {
 
     instance.show();
 
+    const escHandler = e => {
+        if (e.code === 'Escape') {
+            instance.close();
+        }
+    }
+    document.addEventListener('keydown', escHandler);
 }
 
 
