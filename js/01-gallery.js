@@ -1,7 +1,7 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-console.log(galleryItems);
+// console.log(galleryItems);
 
 const list = document.querySelector('.gallery');
 
@@ -20,3 +20,15 @@ const galleryMarkup = galleryItems.map(({original, preview, description}) => `
 
 list.insertAdjacentHTML('afterbegin', galleryMarkup);
 
+
+
+
+const handleClick = e => {
+    e.preventDefault();
+
+    if (e.target === e.currentTarget) {
+        return;
+    }
+}
+
+list.addEventListener('click' , handleClick);
