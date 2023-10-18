@@ -5,14 +5,14 @@ console.log(galleryItems);
 
 const list = document.querySelector('.gallery');
 
-const galleryMarkup = galleryItems.map(item => `
+const galleryMarkup = galleryItems.map(({original, preview, description}) => `
     <li class="gallery__item">
-        <a class="gallery__link" href=${item.original}>
+        <a class="gallery__link" href=${original}>
             <img 
                 class="gallery__image" 
-                src=${item.preview} 
-                alt=${item.description}
-                data-source=${item.original}
+                src=${preview} 
+                alt=${description}
+                data-source=${original}
             />
         </a>
     </li>
