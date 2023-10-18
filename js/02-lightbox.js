@@ -5,13 +5,13 @@ console.log(galleryItems);
 
 const list = document.querySelector('.gallery');
 
-const createGallery = galleryItems.map(image => `
+const createGallery = galleryItems.map(({original, preview, description}) => `
         <li className="gallery__item">
-            <a className="gallery__link" href=${image.original}>
+            <a className="gallery__link" href=${original}>
                 <img 
                     className="gallery__image" 
-                    src=${image.preview} 
-                    alt=${image.description}
+                    src=${preview} 
+                    alt=${description}
                 />
             </a>
         </li>
