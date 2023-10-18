@@ -17,4 +17,6 @@ const createGallery = galleryItems.map(({original, preview, description}) => `
         </li>
     `).join('');
 
-list.insertAdjacentHTML('beforeend', createGallery)
+list.insertAdjacentHTML('beforeend', createGallery);
+
+const lightbox = new SimpleLightbox('.gallery__link');
