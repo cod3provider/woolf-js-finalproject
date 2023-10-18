@@ -23,7 +23,9 @@ list.insertAdjacentHTML('afterbegin', galleryMarkup);
 const showModal = imageSrc => {
     const instance = basicLightbox.create(`
 	    <img src=${imageSrc} />
-    `);
+    `, {onClose: instance => {
+            document.removeEventListener('keydown', escHandler);
+        }});
 
     instance.show();
 
