@@ -20,7 +20,14 @@ const galleryMarkup = galleryItems.map(({original, preview, description}) => `
 
 list.insertAdjacentHTML('afterbegin', galleryMarkup);
 
+const showModal = imageSrc => {
+    const instance = basicLightbox.create(`
+	    <img src=${imageSrc} />
+    `);
 
+    instance.show();
+
+}
 
 
 const handleClick = e => {
@@ -29,6 +36,9 @@ const handleClick = e => {
     if (e.target === e.currentTarget) {
         return;
     }
+
+    const bigImage = e.target.dataset.source;
+    showModal(bigImage);
 }
 
 list.addEventListener('click' , handleClick);
