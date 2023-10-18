@@ -18,9 +18,9 @@ const galleryMarkup = galleryItems.map(({original, preview, description}) => `
 
 list.insertAdjacentHTML('afterbegin', galleryMarkup);
 
-const showModal = imageSrc => {
+const showModal = (imageSrc, alt) => {
     const instance = basicLightbox.create(`
-	    <img src=${imageSrc} />
+	    <img src=${imageSrc} alt=${alt} />
     `, {onClose: instance => {
             document.removeEventListener('keydown', escHandler);
         }});
@@ -44,7 +44,9 @@ const handleClick = e => {
     }
 
     const bigImage = e.target.dataset.source;
-    showModal(bigImage);
+    const description = e.target.alt;
+
+    showModal(bigImage,description);
 }
 
 list.addEventListener('click' , handleClick);
