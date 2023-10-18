@@ -1,8 +1,6 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-// console.log(galleryItems);
-
 const list = document.querySelector('.gallery');
 
 const galleryMarkup = galleryItems.map(({original, preview, description}) => `
@@ -34,9 +32,9 @@ const showModal = imageSrc => {
             instance.close();
         }
     }
+
     document.addEventListener('keydown', escHandler);
 }
-
 
 const handleClick = e => {
     e.preventDefault();
