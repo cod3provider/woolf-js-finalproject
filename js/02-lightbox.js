@@ -19,4 +19,7 @@ const createGallery = galleryItems.map(({original, preview, description}) => `
 
 list.insertAdjacentHTML('beforeend', createGallery);
 
-const lightbox = new SimpleLightbox('.gallery__link');
+const lightbox = new SimpleLightbox('.gallery__link', {
+    captionsData: 'alt',
+    captionDelay: 250,
+});
